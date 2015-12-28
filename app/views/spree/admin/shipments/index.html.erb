@@ -47,14 +47,14 @@
   <table class="table" id="listing_shipments" data-hook>
     <thead>
       <tr data-hook="admin_orders_index_headers">
-        <th><%= sort_link @search, :created_at, Spree.t(:created_at, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :number, Spree.t(:number, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :state, Spree.t(:state, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :item_cost, Spree.t(:item_cost, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :shipping_total, Spree.t(:cost, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :tax_total, Spree.t(:tax_total, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :total, Spree.t(:final_price, scope: 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :supplier_commission, Spree.t(:supplier_commission, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :created_at, 'Created at' %></th>
+        <th><%= sort_link @search, :number, 'Number' %></th>
+        <th><%= sort_link @search, :state, 'State' %></th>
+        <th><%= sort_link @search, :item_cost, 'Item Cost' %></th>
+        <th><%= sort_link @search, :shipping_total, 'Shipping Total' %></th>
+        <th><%= sort_link @search, :tax_total, 'Tax Total' %></th>
+        <th><%= sort_link @search, :total, 'Total' %></th>
+        <th><%= sort_link @search, :supplier_commission, 'Supplier Commission' %></th>
         <th data-hook="admin_shipments_index_header_actions" class="actions"></th>
       </tr>
     </thead>
