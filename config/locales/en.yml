@@ -87,3 +87,7 @@ en:
         success: "Thank you for signing up!"
     supplier_signup: "Supplier Sign Up"
     suppliers: "Suppliers"
+    default_commission_flat_rate: "Default Commission Flat Rate"
+    default_commission_percentage: "Default Commission Percentage"
+    automatically_deliver_orders_to_supplier: "Automatically Deliver Orders to Supplier"
+    send_supplier_email: "Send Supplier Email"
