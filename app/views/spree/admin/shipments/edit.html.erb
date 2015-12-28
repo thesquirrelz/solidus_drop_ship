@@ -1,6 +1,5 @@
-<% content_for :page_actions do %>
-  <%= button_link_to Spree.t(:back_to_shipments_list), spree.admin_shipments_path, icon: 'arrow-left' %>
-<% end %>
+<% provide(:page_title, "Shipment - #{@shipment.try(:number)}") %>
+<% content_for :page_actions do %><%= button_link_to 'Back to Shipments List', spree.admin_shipments_path, icon: 'arrow-left' %><% end %>
 
 <% if spree_current_user.admin? && @shipment.supplier.present? %>
   <div data-hook="admin_shipment_supplier" class="row">
@@ -20,5 +19,5 @@
 <% end %>
 
 <div data-hook="admin_shipment_form_fields">
-  <%= render partial: "spree/admin/orders/shipment", locals: { order: @shipment.order, shipment: @shipment } %>
+  <%= render partial: 'spree/admin/orders/shipment', locals: { order: @shipment.order, shipment: @shipment } %>
 </div>

@@ -1,5 +1,4 @@
 FactoryGirl.define do
-
   factory :order_for_drop_ship, parent: :order do
     bill_address
     ship_address
@@ -66,7 +65,7 @@ FactoryGirl.define do
   factory :supplier, :class => Spree::Supplier do
     sequence(:name) { |i| "Big Store #{i}" }
     email { Faker::Internet.email }
-    url "http://example.com"
+    url 'http://example.com'
     address
     # Creating a stock location with a factory instead of letting the model handle it
     # so that we can run tests with backorderable defaulting to true.
@@ -89,5 +88,4 @@ FactoryGirl.define do
       variant.product.add_supplier! create(:supplier)
     end
   end
-
 end

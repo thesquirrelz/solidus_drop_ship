@@ -1,6 +1,5 @@
 module Spree
   Variant.class_eval do
-
     has_many :suppliers, through: :supplier_variants
     has_many :supplier_variants
 
@@ -19,6 +18,5 @@ module Spree
     def populate_for_suppliers
       self.suppliers = self.product.suppliers
     end
-
   end
 end

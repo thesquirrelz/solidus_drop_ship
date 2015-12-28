@@ -41,7 +41,6 @@ module Spree
           model_class.find_by!(number: params[:id])
         end
       end
-
     end
   end
 end

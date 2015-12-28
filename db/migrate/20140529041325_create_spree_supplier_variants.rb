@@ -7,9 +7,11 @@ class CreateSpreeSupplierVariants < ActiveRecord::Migration
 
       t.timestamps
     end
+
     Spree::Product.where.not(supplier_id: nil).each do |product|
       product.add_supplier! product.supplier_id
     end
+
     remove_column :spree_products, :supplier_id
   end
 end
