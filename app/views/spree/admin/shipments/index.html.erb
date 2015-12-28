@@ -10,10 +10,10 @@
             <%= label_tag :q_created_at_gt, Spree.t(:date_range) %>
             <div class="row">
               <div class="col-md-6">
-                <%= f.text_field :created_at_gt, :class => 'datepicker datepicker-from form-control', :value => params[:q][:created_at_gt], :placeholder => Spree.t(:start) %>
+                <%= f.text_field :created_at_gt, :class => 'datepicker datepicker-from form-control', :value => params[:q][:created_at_gt], placeholder: Spree.t(:start) %>
               </div>
               <div class="col-md-6">
-                <%= f.text_field :created_at_lt, :class => 'datepicker datepicker-to form-control', :value => params[:q][:created_at_lt], :placeholder => Spree.t(:stop) %>
+                <%= f.text_field :created_at_lt, :class => 'datepicker datepicker-to form-control', :value => params[:q][:created_at_lt], placeholder: Spree.t(:stop) %>
               </div>
             </div>
           </div>
@@ -21,15 +21,15 @@
 
         <div class="col-md-3">
           <div class="form-group">
-            <%= label_tag nil, Spree.t(:shipment_number) %>
+            <%= label_tag nil, 'Shipment Number' %>
             <%= f.text_field :number_cont , class: 'form-control js-quick-search-target'%>
           </div>
         </div>
 
         <div class="col-md-3">
           <div class="form-group">
-            <%= label_tag nil, Spree.t(:status) %><br/>
-            <%= f.select :state_eq, Spree::Shipment.state_machines[:state].states.collect {|s| [Spree.t("shipment_state.#{s.name}"), s.value]}, {:include_blank => true}, :class => 'select2' %>
+            <%= label_tag nil, 'Status' %><br/>
+            <%= f.select :state_eq, Spree::Shipment.state_machines[:state].states.collect {|s| [Spree.t("shipment_state.#{s.name}"), s.value]}, { include_blank: true }, class: 'select2' %>
           </div>
         </div>
       </div>
@@ -47,14 +47,14 @@
   <table class="table" id="listing_shipments" data-hook>
     <thead>
       <tr data-hook="admin_orders_index_headers">
-        <th><%= sort_link @search, :created_at, Spree.t(:created_at, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :number, Spree.t(:number, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :state, Spree.t(:state, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :item_cost, Spree.t(:item_cost, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :shipping_total, Spree.t(:cost, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :tax_total, Spree.t(:tax_total, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :total, Spree.t(:final_price, :scope => 'activerecord.attributes.spree/shipment') %></th>
-        <th><%= sort_link @search, :supplier_commission, Spree.t(:supplier_commission, :scope => 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :created_at, Spree.t(:created_at, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :number, Spree.t(:number, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :state, Spree.t(:state, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :item_cost, Spree.t(:item_cost, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :shipping_total, Spree.t(:cost, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :tax_total, Spree.t(:tax_total, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :total, Spree.t(:final_price, scope: 'activerecord.attributes.spree/shipment') %></th>
+        <th><%= sort_link @search, :supplier_commission, Spree.t(:supplier_commission, scope: 'activerecord.attributes.spree/shipment') %></th>
         <th data-hook="admin_shipments_index_header_actions" class="actions"></th>
       </tr>
     </thead>
