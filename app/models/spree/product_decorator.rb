@@ -1,5 +1,4 @@
 Spree::Product.class_eval do
-
   has_many :suppliers, through: :master
 
   def add_supplier!(supplier_or_id)
@@ -13,7 +12,6 @@ Spree::Product.class_eval do
     end
   end
 
-  # Returns true if the product has a drop shipping supplier.
   def supplier?
     suppliers.present?
   end
@@ -24,7 +22,7 @@ Spree::Product.class_eval do
     variants_including_master.each do |variant|
       unless variant.suppliers.pluck(:id).include?(supplier.id)
         variant.suppliers << supplier
-        supplier.stock_locations.each { |location| location.propagate_variant(variant) }
+        supplier.stock_locations.each { |location| location.propagate_variant(variant) unless location.stock_items.pluck(:variant_id).include?(variant.id) }
       end
     end
   end

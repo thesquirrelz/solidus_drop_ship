@@ -1,6 +1,6 @@
 <% provide(:page_title, 'Drop Ship Settings') %>
 
-<%= form_tag(spree.admin_drop_ship_settings_path, :method => :put) do %>
+<%= form_tag(spree.admin_drop_ship_settings_path, method: :put) do %>
   <fieldset class="general no-border-top">
     <div class="row">
       <% %w(default_commission_flat_rate default_commission_percentage automatically_deliver_orders_to_supplier send_supplier_email).each do |key| %>
