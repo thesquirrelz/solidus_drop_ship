@@ -4,3 +4,4 @@
 
 '2.4.x' => { :branch => 'master' }
 '2.3.x' => { :branch => '2-3-stable' }
+'2.5' => {:branch => '1.1.0.alpha'}
