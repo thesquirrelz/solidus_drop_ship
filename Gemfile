@@ -1,8 +1,8 @@
 source 'http://rubygems.org'
 
 group :development, :test do
-  gem 'solidus', github: 'solidusio/solidus', branch: 'master'
-  gem 'solidus_auth_devise'
+  gem 'spree', github: 'spree/spree', branch: '3-0-stable'
+  gem 'spree_auth_devise'
 end
 
 gemspec
